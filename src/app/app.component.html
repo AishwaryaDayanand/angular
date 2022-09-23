@@ -1,7 +1,4 @@
-<h1>HELLO {{name}}</h1>
+<h1>App Component</h1>
+<!-- <app-child1 [selected] ="selected_employee"  [emp_data] = 'employees' (sendName) = "changeName($event)" ></app-child1> -->
 
-<p>{{age}} , {{title}}</p>
-
-<button (click)="handlerMethod1('string passed' , 21)" >click here </button>
-<button (click)="handlerMethod2('str1' ,'str2')" >click here </button>
-<button (click)="handlerMethod3(20, 21)" >click here </button>
+<router-outlet></router-outlet>

@@ -1,45 +1,28 @@
-
-
-import { Component } from '@angular/core';
-
+import { Component, OnChanges } from '@angular/core';
+import {Employee} from './employee'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name : string;   //declaration
-  age : number;
-  title : string | number;
+
+  title = "learning angular"
+  selected_employee = ''
+  employees : Employee[] = []
 
   constructor(){
-    this.name = "Aishwarya" // initialization
-    this.age = 21;
-    this.title = "2qq";
-    // this.handlerMethod('string',2)
+  this.employees = [
+    {name:"Aishwarya", age:21 , emp_code:'MED1'},
+    {name:"Mansa", age:21 , emp_code:'MED2'},
+    {name:"Rakesh", age:35 , emp_code:'MED3'}
+  ] 
   }
 
-  handlerMethod1(var1 : string , var2 : number) :
-   void {
-    console.log(`handler method called:  ${var1} ${var2}`);
 
-  }
-
-  handlerMethod2(var1 : string , var2 : string) : 
-  string[] {
-    let arr : string[] = [var1,var2];
-    console.log(`handler method called:  ${var1} ${var2}`);
-    console.log(arr);
-    return arr ; 
-
-  }
-
-  handlerMethod3(var1 : number , var2 : number) : {var1:number , var2 :number}{
-    console.log(`handler method called:  ${var1} ${var2}`);
-    let obj = {var1:var1 , var2 :var2}
-    console.log(obj);
-    return obj;
-
+  changeName(name:string){
+    this.selected_employee = name
+    console.log(name);
   }
 }
 

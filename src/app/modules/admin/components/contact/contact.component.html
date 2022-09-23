@@ -1,0 +1,13 @@
+<p>contact works!</p>
+{{incomingText}}
+
+<form [formGroup]="contactForm" (ngSubmit) = "submitContact()" >
+    <input type="text" name="fname" formControlName = 'patient_name' placeholder="first name">
+    <input type="text" name="fname" formControlName = 'age' placeholder="age">
+    <input type="text" name="fname" formControlName = 'disease' placeholder="disease name">
+    <div *ngIf="( contactForm.get('firstName')?.dirty)">
+      Please provide your username.
+    </div>
+    <p>{{contactForm.get('firstName')?.valid}}</p>
+    <input type="submit" value="Send msg">
+</form>
