@@ -1,0 +1,6 @@
+<p>home works!</p>
+<button (click)="about()" >about </button>
+<h1>{{appointment.patient_name}}</h1>
+<ul>
+    <li *ngFor="let appointment of appointments">{{appointment.patient_name}} <button (click)="viewAppointment(appointment.id)" >view</button> <button (click)="updateAppointment(appointment.id)" >delete</button></li>
+</ul> 
